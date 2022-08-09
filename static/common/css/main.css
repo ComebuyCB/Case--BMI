@@ -1,0 +1,234 @@
+/*
+Structure instruction：
+    # [Default Css]
+        - [Root Css]: :root { ... }
+        - [Structure]: html, body, main, #wrap ...
+        - [Default Html]: h1, a, ::-webkit-scrollbar ...
+
+    # [Plugins]
+        - [Plugins Modified]: Bootstrap Modals...
+        - [Plugins SelfMade]: My Modals...
+
+    # [Public Style]
+        - [Simple Css]: typesetting, color, fonts ... ( Single Css )
+        - [Components]: btn, avatar, modal, radio ... ( Use frequently )
+        - [Templates]: user_btn, user_alert18_Box ... ( Use when more than 2 pages, custom )
+
+    # [Pages]
+        - [Include Page]: header, footer
+        - [Current Page]: #login, #about
+
+    -- Author Comebuy
+*/
+
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap);
+
+/*######### [Default Css] #########*/
+    /*====== [Root Css] ======*/
+        :root {
+            --wh: 100vh;
+            --gap-1: 0.25rem;
+            --gap-2: 0.5rem;
+            --gap-3: 1rem;
+            --gap-4: 1.5rem;
+            --gap-5: 3rem;
+            
+            --c-border: #888;
+            --c-body: #555;
+
+            --fs-h1: ; 
+            --fs-h2: 24px;
+            --fs-h3: ;
+            --fs-p: ;
+        }
+
+
+    /*====== [Structure] ======*/
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; min-width: 960px; margin: auto; color: var(--c-body) }
+        #wrap { display: flex; flex-direction: column; min-height: var(--wh); margin-left: auto; margin-right: auto; }
+        main { flex-grow: 1; }
+
+
+    /*====== [Default Html] =======*/
+        a { color: var(--bs-dark); text-decoration: none; }
+        a:hover { color: inherit; text-decoration: none; }
+        label { margin-bottom: 0; }
+
+
+/*######### [Plugins] #########*/
+    /*====== [Plugins Modified] ======*/
+        /*=== Bootstrap ===*/
+            .breadcrumb-item + .breadcrumb-item::before { content: '>';  }
+            .breadcrumb-item > .breadcrumb_link { color: #555 }
+            .breadcrumb-item.active > .breadcrumb_link.active { color: #777; }
+
+            .form-control, .form-select, .btn { box-shadow: none !important; }
+            .form-control, .form-select { border: var(--c-border) 2px solid; }
+
+
+    /*====== [Plugins SelfMade] ======*/
+        /*=== js-dragImg ===*/
+
+
+/*######### [Public Style] #########*/
+    /*====== [Simple Css] ======*/
+        /*=== emmet ===*/
+            /* position */
+                .pos-s {position:static !important;}
+                .pos-a {position:absolute !important;}
+                .pos-r {position:relative !important;}
+                .pos-f {position:fixed !important;}
+
+        /*=== font ===*/
+            .fs-h1 { font-size: var(--fs-h1); }
+            .fs-h2 { font-size: var(--fs-h2); }
+
+
+        /*=== color ===*/
+
+
+        /*=== bg ===*/
+            .bg { background: center center no-repeat; background-size: cover; }
+
+
+        /*=== typesetting ===*/
+            .h-100vh { height: var(--wh); }
+            .max-w-1000 { max-width: 1000px; }
+            .max-w-600 { max-width: 600px; }
+
+            .flex-center { display: flex; align-items: center; justify-content: center; }
+            .flex-center-a { display: flex; align-items: center; }
+            .flex-center { display: flex; align-items: center; justify-content: center; }
+            .flex-center-a { display: flex; align-items: center; }
+            .flex-col { display: flex; flex-direction: column; }
+            .flex-0 { flex: 0; }
+            .flex-1 { flex: 1; }
+      
+            [class*=ch-g-] { display: flex; flex-wrap: wrap; }
+            .ch-g-1 { margin-top: calc( -1 * var(--gap-1) ); }
+            .ch-g-2 { margin-top: calc( -1 * var(--gap-2) ); }
+            .ch-g-3 { margin-top: calc( -1 * var(--gap-3) ); }
+            .ch-g-4 { margin-top: calc( -1 * var(--gap-4) ); }
+            .ch-g-5 { margin-top: calc( -1 * var(--gap-5) ); }
+      
+            .ch-g-1 > * { margin-top: var(--gap-1); --parent-gap-y: var(--gap-1); }
+            .ch-g-2 > * { margin-top: var(--gap-2); --parent-gap-y: var(--gap-2); }
+            .ch-g-3 > * { margin-top: var(--gap-3); --parent-gap-y: var(--gap-3); }
+            .ch-g-4 > * { margin-top: var(--gap-4); --parent-gap-y: var(--gap-4); }
+            .ch-g-5 > * { margin-top: var(--gap-5); --parent-gap-y: var(--gap-5); }
+            .ch-g-1 > *:not(:last-child) { margin-right: var(--gap-1); }
+            .ch-g-2 > *:not(:last-child) { margin-right: var(--gap-2); }
+            .ch-g-3 > *:not(:last-child) { margin-right: var(--gap-3); }
+            .ch-g-4 > *:not(:last-child) { margin-right: var(--gap-4); }
+            .ch-g-5 > *:not(:last-child) { margin-right: var(--gap-5); }
+      
+            .ch-gy-1 > * { --parent-gap-y: var(--gap-1); }
+            .ch-gy-2 > * { --parent-gap-y: var(--gap-2); }
+            .ch-gy-3 > * { --parent-gap-y: var(--gap-3); }
+            .ch-gy-4 > * { --parent-gap-y: var(--gap-4); }
+            .ch-gy-5 > * { --parent-gap-y: var(--gap-5); }
+            .ch-gy-1 > *:not(:first-child) { margin-top: var(--gap-1); }
+            .ch-gy-2 > *:not(:first-child) { margin-top: var(--gap-2); }
+            .ch-gy-3 > *:not(:first-child) { margin-top: var(--gap-3); }
+            .ch-gy-4 > *:not(:first-child) { margin-top: var(--gap-4); }
+            .ch-gy-5 > *:not(:first-child) { margin-top: var(--gap-5); }
+      
+            .ch-gx-1 > *:not(:last-child) { margin-right: var(--gap-1); }
+            .ch-gx-2 > *:not(:last-child) { margin-right: var(--gap-2); }
+            .ch-gx-3 > *:not(:last-child) { margin-right: var(--gap-3); }
+            .ch-gx-4 > *:not(:last-child) { margin-right: var(--gap-4); }
+            .ch-gx-5 > *:not(:last-child) { margin-right: var(--gap-5); }
+      
+            [class*=ch-gy-] > .ch-g-1:not(:first-child),
+            [class*=ch-gy-] > .row.gy-1:not(:first-child),
+            [class*=ch-gy-] > .row.g-1:not(:first-child),
+            [class*=ch-g-] > .ch-g-1,
+            [class*=ch-g-] > .row.gy-1,
+            [class*=ch-g-] > .row.g-1 { margin-top: calc( -1 * var(--gap-1) + var(--parent-gap-y, 0) ); }
+      
+            [class*=ch-gy-] > .ch-g-2:not(:first-child),
+            [class*=ch-gy-] > .row.gy-2:not(:first-child),
+            [class*=ch-gy-] > .row.g-2:not(:first-child),
+            [class*=ch-g-] > .ch-g-2,
+            [class*=ch-g-] > .row.gy-2,
+            [class*=ch-g-] > .row.g-2 { margin-top: calc( -1 * var(--gap-2) + var(--parent-gap-y, 0) ); }
+      
+            [class*=ch-gy-] > .ch-g-3:not(:first-child),
+            [class*=ch-gy-] > .row.gy-3:not(:first-child),
+            [class*=ch-gy-] > .row.g-3:not(:first-child),
+            [class*=ch-g-] > .ch-g-3,
+            [class*=ch-g-] > .row.gy-3,
+            [class*=ch-g-] > .row.g-3 { margin-top: calc( -1 * var(--gap-3) + var(--parent-gap-y, 0) ); }
+      
+            [class*=ch-gy-] > .ch-g-4:not(:first-child),
+            [class*=ch-gy-] > .row.g-4:not(:first-child),
+            [class*=ch-gy-] > .row.gy-4:not(:first-child),
+            [class*=ch-g-] > .ch-g-4,
+            [class*=ch-g-] > .row.gy-4,
+            [class*=ch-g-] > .row.g-4 { margin-top: calc( -1 * var(--gap-4) + var(--parent-gap-y, 0) ); }
+      
+            [class*=ch-gy-] > .ch-g-5:not(:first-child),
+            [class*=ch-gy-] > .row.g-5:not(:first-child),
+            [class*=ch-gy-] > .row.gy-5:not(:first-child),
+            [class*=ch-g-] > .ch-g-5,
+            [class*=ch-g-] > .row.gy-5,
+            [class*=ch-g-] > .row.g-5 { margin-top: calc( -1 * var(--gap-5) + var(--parent-gap-y, 0) ); }
+            /* note:
+                (1) for wrap items: .ch-g- (仿製.row .g-, 但全以margin寫。)
+                (2) for nowrap items: .ch-gy-, .ch-gx-
+                (3) 1、2 never appear in the same class. 
+            */
+
+
+
+
+    /*====== [Components] ======*/
+        /*=== button ===*/
+            .btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 400; padding: 4px 16px; font-size: 24px; line-height: 1.5; min-width: 56px; min-height: 56px; transition: none; }
+            
+            .btn_warning { background-color: #DE9C4F; color: white; }
+            .btn_warning:hover { background-color: #EFA352; color: white; }
+
+
+        /*=== alink ===*/
+            .alink:hover { text-decoration: underline; }
+
+    /*====== [Templates] ======*/
+        /*=== container ===*/
+            .frame { border: 1px solid #ccc; background-color: #F6F6F6; padding: 8px; border-radius: 8px; }
+            .frame_body { border: 1px solid #ccc; border-radius: 12px; background-color: #FFF; }
+
+
+/*######### [Pages] #########*/
+    /*====== [Include Page] ======*/
+        /*=== header ===*/
+            header {  }
+            .header_top { position: relative; }
+            .header_top_links { position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 20px; }
+
+            .header_bot_nav { display: flex; align-items: center; justify-content: center; border-bottom: solid 2px #E6E6E6; padding: 0; list-style: none; display: flex; }
+            .header_bot_nav > ._item { padding: 8px 20px; }
+            .header_bot_nav > ._item > ._link { display: flex; align-items: center; font-size: 28px; line-height: 1; color: #6D5249; padding: 8px 16px; border-radius: 8px; }
+            .header_bot_nav > ._item > ._link:hover,
+            .header_bot_nav > ._item > ._link.active { background-color: #AC8D70; color: white; }
+
+        /*=== footer ===*/
+            footer { background-color: #DDCFAF; padding: 16px 0; }
+
+    
+    /*====== [Current Page] ======*/
+        /*=== #index ===*/
+            #index .newsList { padding-left: 16px; }
+            #index .newsList > ._item { display: flex; align-items: center; font-size: 20px; border-bottom: 2px solid transparent; }
+            #index .newsList > ._item:hover { border-bottom-color: #555; }
+            #index .newsList > ._item + ._item { margin-top: 8px; }
+            #index .newsList > ._item > ._time { color: #E85800; flex-shrink: 0; padding-right: 20px; }
+            #index .newsList > ._item > ._cont { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+
+         /*=== #signUp ===*/
+            #signUp .banner { position: relative; border: 8px solid transparent }
+            #signUp .banner_text { position: absolute; right: 8px; top: 0; height: 100%; display: flex; flex-direction: column; justify-content: center; max-width: 200px; }
+
+
