@@ -27,7 +27,7 @@
 <body id="index">
     <div id="wrap">
         <header>
-            <script>$.get('include/header.html', (res)=>{ $('header')[0].outerHTML=res } )</script>
+            <script>$.get('/templates/include/header.html', (res)=>{ $('header')[0].outerHTML=res } )</script>
         </header>
 
         <main>
@@ -84,11 +84,11 @@
         </main>
 
         <div id="modal">
-            <script>$.get('include/modal.html', (res)=>{ $('#modal')[0].outerHTML=res } )</script>
+            <script>$.get('/templates/include/modal.html', (res)=>{ $('#modal')[0].outerHTML=res } )</script>
         </div>
 
         <footer>
-            <script>$.get('include/footer.html', (res)=>{ $('footer')[0].outerHTML=res } )</script>
+            <script>$.get('/templates/include/footer.html', (res)=>{ $('footer')[0].outerHTML=res } )</script>
         </footer>
     </div>
 </body>
